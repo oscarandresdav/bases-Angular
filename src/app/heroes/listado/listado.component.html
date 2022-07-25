@@ -6,7 +6,10 @@
   <li *ngFor="let heroe of heroes">{{heroe}}</li>
 </ul>
 
-<div *ngIf="heroeBorrado">
-  <h3>Héroe Borrado: <small>{{heroeBorrado}}</small></h3>
-  
+<div *ngIf="heroeBorrado; else noBorrado">
+  <h3>Héroe Borrado: <small>{{heroeBorrado}}</small></h3> 
 </div>
+
+<ng-template #noBorrado>
+  <h3>No ha borrado nada.</h3>
+</ng-template>
